@@ -30,8 +30,11 @@ const onClickFunc = (e) => {
         }
         case '=': {
             try {
-                if (!isNaN(eval(inputArea.value)) && eval(inputArea.value) !== Infinity) {
-                    inputArea.value=(eval(inputArea.value).toString());
+                let res=eval(inputArea.value);
+                if (!isNaN(res) && res !== Infinity) {
+                    inputArea.value=(res).toString());
+                }else{
+                    alert('Бесконечность или делишь на 0');
                 }
             } catch {
                 alert('Что-то не то ввели');
