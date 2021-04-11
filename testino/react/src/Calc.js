@@ -28,8 +28,11 @@ const Calc = () => {
             }
             case '=': {
                 try {
-                    if (!isNaN(eval(inputArea)) && eval(inputArea) !== Infinity) {
-                        setInputArea(eval(inputArea).toString());
+                    let res=eval(inputArea);
+                    if (!isNaN(res) && res !== Infinity) {
+                        setInputArea(res.toString());
+                    }else {
+                        alert('Бесконечность, или делишь на 0');
                     }
                 } catch {
                     alert('Что-то не то ввели');
